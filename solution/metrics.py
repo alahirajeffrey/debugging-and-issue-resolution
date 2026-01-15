@@ -41,7 +41,9 @@ def setup_metrics(app):
 
         # --- Calculate RPS ---
         key = endpoint
-        current_count = REQUEST_COUNT.labels(request.method, endpoint, response.status_code)._value.get()
+        current_count = REQUEST_COUNT.labels(
+            request.method, endpoint, response.status_code
+        )._value.get()
         now = time.time()
 
         last_count = _LAST_COUNTS.get(key, 0)

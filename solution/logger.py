@@ -20,7 +20,9 @@ class CorrelationIdFilter(logging.Filter):
         span = get_current_span()
         if span:
             ctx = span.get_span_context()
-            record.trace_id = format(ctx.trace_id, "032x") if ctx.trace_id != 0 else None
+            record.trace_id = (
+                format(ctx.trace_id, "032x") if ctx.trace_id != 0 else None
+            )
             record.span_id = format(ctx.span_id, "016x") if ctx.span_id != 0 else None
         else:
             record.trace_id = None
@@ -37,7 +39,7 @@ def setup_logger():
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    ## prevent duplicate handlers 
+    ## prevent duplicate handlers
     if logger.handlers:
         return
 
