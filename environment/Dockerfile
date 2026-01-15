@@ -36,7 +36,7 @@ WORKDIR /app
 
 COPY --from=builder /opt/venv /opt/venv
 
-COPY solution ./solution
+# COPY solution ./solution
 
 RUN chown -R appuser:appuser /app
 USER appuser

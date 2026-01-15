@@ -13,6 +13,8 @@ services:
       - "6831:6831/udp"
       - "4317:4317"
       - "4318:4318"
+    networks:
+      - observability
 
   prometheus:
     image: prom/prometheus:v2.49.1
@@ -22,13 +24,23 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - observability
 
   app:
     build: ./environment
-    container_name: myapp
+    container_name: app
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8000:5000"
+    .env_file:
+      - .env
     depends_on:
       - jaeger
       - prometheus
+    networks:
+      - observability
+
+networks:
+  observability:
+    driver: bridge
