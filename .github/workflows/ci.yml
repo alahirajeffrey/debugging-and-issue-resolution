@@ -15,7 +15,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --locked --extra dev
+          uv pip install --extra dev -- --locked
 
       - name: Lint
         run: |
