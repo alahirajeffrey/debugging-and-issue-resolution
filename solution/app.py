@@ -1,9 +1,12 @@
+import os
 from flask import Flask, g
 from solution.logger import setup_logger
 from solution.utils.correlation import correlation_middleware
 from solution.routes.health import health_bp
 from solution.metrics import setup_metrics
 from solution.tracer import setup_tracing
+from solution.config import Config
+
 
 def create_app():
     setup_logger()
@@ -26,6 +29,14 @@ def create_app():
 
     return app
 
+
 if __name__ == "__main__":
     app = create_app()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+
+    debug = Config.ENV == "development"
+
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=debug,
+    )
