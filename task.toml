@@ -5,7 +5,7 @@ author_name = "John Shinggu"
 author_email = "jshinggu@email.sc.edu"
 difficulty = "medium"
 category = "debugging and issue resolution"
-tags = ["python", "issue-resolution", "debugging"]
+tags = ["python", "issue-resolution", "debugging", "prometheus", "opentelemetry"]
 
 [verifier]
 timeout_sec = 120.0
