@@ -33,7 +33,7 @@ services:
     restart: unless-stopped
     ports:
       - "8000:5000"
-    .env_file:
+    env_file:
       - .env
     depends_on:
       - jaeger
