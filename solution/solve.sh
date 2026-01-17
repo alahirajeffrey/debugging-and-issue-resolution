@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# navigate to virtual environment
+cd ..
+
 # setup python environment
 source .venv/bin/activate
 
