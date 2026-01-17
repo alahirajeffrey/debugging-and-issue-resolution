@@ -6,6 +6,7 @@ from solution.tracer import setup_tracing
 
 """Tests to validate logs."""
 
+
 # SHOULD PASS: test for X-Correlation-ID in response headers
 def test_correlation_id_header(client):
     response = client.get("/metrics")
@@ -47,13 +48,16 @@ def test_logger_formatter_is_json(caplog):
 
     assert log_json is not None
 
+
 # SHOULD PASS: test to ensure at least one StreamHandler is attached
 def test_logger_has_stream_handler():
     setup_logger()
     logger = logging.getLogger()
     assert any(isinstance(h, logging.StreamHandler) for h in logger.handlers)
 
+
 """Tests metrics are being exposed."""
+
 
 # SHOULD PASS: test to ensure total http request is in metrics response
 def test_http_request_total(client):
@@ -78,7 +82,9 @@ def test_metrics_include_status_codes(client):
     response = client.get("/metrics")
     assert response.status_code == 200
 
+
 """Tests to check if traces are being sent."""
+
 
 # SHOULD PASS: test to see if tracer is configured
 def test_tracer_is_configured():
