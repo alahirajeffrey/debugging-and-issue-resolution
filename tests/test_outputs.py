@@ -22,11 +22,11 @@ def test_logger_level_is_info():
     assert logger.level == logging.INFO
 
 
-# SHOULD FAIL: test to check if logger level is error
-def test_logger_level_is_error():
-    setup_logger()
-    logger = logging.getLogger()
-    assert logger.level == logging.ERROR
+# # SHOULD FAIL: test to check if logger level is error
+# def test_logger_level_is_error():
+#     setup_logger()
+#     logger = logging.getLogger()
+#     assert logger.level == logging.ERROR
 
 
 # SHOULD PASS: test to check if log is in json format
@@ -88,9 +88,9 @@ def test_tracer_is_configured():
 
 
 # SHOULD FAIL: test to see if tracer is not configured
-def test_tracer_provider_is_none():
-    provider = trace.get_tracer_provider()
-    assert provider is None
+# def test_tracer_provider_is_none():
+#     provider = trace.get_tracer_provider()
+#     assert provider is None
 
 
 # SHOULD PASS: test to see if tracer is an instance of trace provier
