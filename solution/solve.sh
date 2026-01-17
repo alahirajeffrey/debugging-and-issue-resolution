@@ -9,7 +9,7 @@ export PYTHONPATH=$(pwd)
 
 # start server and log output to temp file
 LOG_FILE=$(mktemp)
-uv run python solution/app.py > "$LOG_FILE" 2>&1 &
+uv run python -m solution.app > "$LOG_FILE" 2>&1 &
 
 # wait 5 seconds for server to start
 sleep 5
