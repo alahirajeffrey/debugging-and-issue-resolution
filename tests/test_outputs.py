@@ -3,7 +3,6 @@ from solution.logger import setup_logger
 import json
 from opentelemetry import trace
 from solution.tracer import setup_tracing
-from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 """Tests to validate logs."""
 
@@ -96,7 +95,6 @@ def test_tracer_is_configured():
 # SHOULD PASS: test to see if tracer is an instance of trace provier
 def test_tracer_provider_is_set(client):
     setup_tracing(client.application)
-
     ## get the global tracer provider
     provider = trace.get_tracer_provider()
     assert provider is not None
