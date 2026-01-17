@@ -1,4 +1,3 @@
-import os
 from flask import Flask, g
 from solution.logger import setup_logger
 from solution.utils.correlation import correlation_middleware
