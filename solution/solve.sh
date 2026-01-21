@@ -4,6 +4,9 @@ set -e
 # navigate to source environment
 cd ..
 
+## start prometheus and jaeger
+docker compose up jaeger prometheus -d
+
 # setup python environment
 source .venv/bin/activate
 
