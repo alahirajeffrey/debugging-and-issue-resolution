@@ -1,8 +1,8 @@
 import logging
-from solution.logger import setup_logger
+from app.logger import setup_logger
 import json
 from opentelemetry import trace
-from solution.tracer import setup_tracing
+from app.tracer import setup_tracing
 
 """Tests to validate logs."""
 

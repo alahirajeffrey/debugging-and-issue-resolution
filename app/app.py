@@ -1,10 +1,10 @@
 from flask import Flask, g
-from solution.logger import setup_logger
-from solution.utils.correlation import correlation_middleware
-from solution.routes.health import health_bp
-from solution.metrics import setup_metrics
-from solution.tracer import setup_tracing
-from solution.config import Config
+from app.logger import setup_logger
+from app.utils.correlation import correlation_middleware
+from app.routes.health import health_bp
+from app.metrics import setup_metrics
+from app.tracer import setup_tracing
+from app.config import Config
 
 
 def create_app():

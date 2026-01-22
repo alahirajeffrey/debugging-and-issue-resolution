@@ -6,7 +6,7 @@ from opentelemetry.exporter.otlp.proto.http.trace_exporter import (
     OTLPSpanExporter,
 )
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
-from solution.config import Config
+from app.config import Config
 
 
 def setup_tracing(app):
