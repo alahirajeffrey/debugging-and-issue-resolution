@@ -8,6 +8,14 @@ Requirements to run the project:
 
 1. Docker compose
 
+How to run:
+
+1. Navigate to the directory
+2. Run the command `docker compose up --build` to build the application
+3. Create a `.env` file and populate with the `.env.example file`
+4. Then run the command `docker compose up -d`
+5. Open postman and make a request to `localhost:5000/health` to run the health checker or `localhost:5000/metrics` to view the exposed prometheus metrics
+
 This project should:
 
 1. Create a flask microservice
