@@ -15,10 +15,10 @@ RUN useradd --create-home appuser
 USER appuser
 
 # copy app code
-# COPY solution/ ./solution/
+COPY app/ ./app/
 
 # expose port
 EXPOSE 5000
 
 # start app
-# CMD ["flask", "run"]
+CMD ["flask", "run"]

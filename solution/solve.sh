@@ -15,7 +15,7 @@ export PYTHONPATH=$(pwd)
 
 # start server and log output to temp file
 LOG_FILE=$(mktemp)
-uv run python -m solution.app > "$LOG_FILE" 2>&1 &
+uv run python -m app.app > "$LOG_FILE" 2>&1 &
 
 # store server PID so we can kill it later
 SERVER_PID=$!
