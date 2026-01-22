@@ -15,8 +15,7 @@ def setup_tracing(app):
     provider = TracerProvider(resource=resource)
     trace.set_tracer_provider(provider)
 
-    otlp_exporter = OTLPSpanExporter(
-        endpoint="http://localhost:4318/v1/traces")
+    otlp_exporter = OTLPSpanExporter(endpoint="http://localhost:4318/v1/traces")
 
     provider.add_span_processor(BatchSpanProcessor(otlp_exporter))
 

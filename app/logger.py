@@ -23,9 +23,7 @@ class CorrelationIdFilter(logging.Filter):
             record.trace_id = (
                 format(ctx.trace_id, "032x") if ctx.trace_id != 0 else None
             )
-            record.span_id = (
-                format(ctx.span_id, "016x") if ctx.span_id != 0 else None
-            )
+            record.span_id = format(ctx.span_id, "016x") if ctx.span_id != 0 else None
         else:
             record.trace_id = None
             record.span_id = None

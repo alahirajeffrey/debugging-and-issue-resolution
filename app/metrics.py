@@ -36,8 +36,7 @@ def setup_metrics(app):
     def record_metrics(response):
         latency = time.time() - request.start_time
         endpoint = request.path
-        REQUEST_COUNT.labels(
-            request.method, endpoint, response.status_code).inc()
+        REQUEST_COUNT.labels(request.method, endpoint, response.status_code).inc()
         REQUEST_LATENCY.labels(endpoint).observe(latency)
 
         # --- Calculate RPS ---
