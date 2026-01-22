@@ -25,4 +25,4 @@ jobs:
 
       - name: Tests
         run: |
-          npm run pytest
+          uv run pytest
