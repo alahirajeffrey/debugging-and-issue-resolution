@@ -4,7 +4,7 @@ version = "1.0"
 author_name = "John Shinggu"
 author_email = "jshinggu@email.sc.edu"
 difficulty = "medium"
-category = "debugging and issue resolution"
+category = "software-engineering"
 tags = ["python", "issue-resolution", "debugging", "prometheus", "opentelemetry"]
 
 [verifier]
